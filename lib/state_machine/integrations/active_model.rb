@@ -513,6 +513,7 @@ module StateMachine
         def around_validation(object)
           object.class.state_machines.transitions(object, action, :after => false).perform { yield }
         end
+        # https://github.com/pluginaweek/state_machine/issues/348
         public :around_validation
 
         # Creates a new callback in the callback chain, always inserting it
